@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./general_styles.css" />
+    <link rel="stylesheet" href="./info_pages_styling.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <title>PUF</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="navbar">
+          <li class="logo navbar-element">
+            <a href="./MainPage.html"> <img src="./logo.png" /></a>
+          </li>
+          <li class="navbar-element">
+            <a href="./PUF.html">P.U.F.</a>
+          </li>
+          <li class="navbar-element">
+            <a href="./RFID.html">R.F.I.D</a>
+          </li>
+
+          <li class="navbar-element">
+            <a href="./PUF_RFID.html">P.U.F. based R.F.I.D.</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="honeycomb">
+        <div class="first-row">
+          <div class="hex">
+            <div class="flip-card">
+              <div class="front">
+                <p class="title-section">Definition</p>
+                <p class="info">
+                  A physically unbreakable function can be likened to a person's
+                  fingerprint because it can be used to uniquely recognize an
+                  object, due to its specific properties that can change due to
+                  operating conditions
+                </p>
+              </div>
+              <div class="back">
+                <p class="info">
+                  A physically unclonable function is a function built into an
+                  object, such as an integrated circuit, which when interrogated
+                  with a parameter x generates a response y that depends on both
+                  x and its unique properties, which are difficult to clone.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="hex">
+            <div class="flip-card">
+              <div class="front">
+                <p class="title-section">Properties-1</p>
+                <p class="info">
+                  Buildability - means that it is easy to build a random
+                  instance of a PUF class
+                </p>
+              </div>
+              <div class="back">
+                <p class="info">
+                  Evaluability - this property includes buildability and in
+                  addition requires that any instance of a PUF class can be
+                  easily evaluated on a random test
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="hex">
+            <div class="flip-card">
+              <div class="front">
+                <p class="title-section">Properties-2</p>
+                <p class="info">
+                  Uniqueness - includes evaluability and in addition requires
+                  that the results obtained by evaluating the same variable
+                  across different PUF instances be different
+                </p>
+              </div>
+              <div class="back">
+                <p class="info">
+                  Unpredictability - includes evaluability and also requires
+                  that no PPT algorithm be able to predict the response of a PUF
+                  instance for a given value.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="hex">
+            <div class="flip-card">
+              <div class="front">
+                <p class="title-section">Properties-3</p>
+                <p class="info">
+                  Mathematical non-clonability - includes unpredictability if
+                  the opponent has resources and unlimited access to a PUF
+                  instance in the learning process.
+                </p>
+              </div>
+              <div class="back">
+                <p class="info">
+                  Physical non-clonability - includes evaluability and in
+                  addition requires weight in creating a new PUF instance that
+                  looks more like another PUF instance than is described by the
+                  uniqueness property.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="second-row">
+          <div class="hex">
+            <div class="flip-card">
+              <div class="front">
+                <p class="title-section">Types</p>
+                <p class="info">
+                  Non-electronic PUFs, their behavior is based on non-electronic
+                  technologies or materials.
+                </p>
+              </div>
+              <div class="back">
+                <p class="info">
+                  Electronic PUFs are those constructions that contain random
+                  variations in electronic characteristics, for example
+                  resistant<br />
+                  Silicon PUFs a major subclass of electronic PUFs that are
+                  embedded in a silicon chip.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="hex">
+            <div class="flip-card">
+              <div class="front">
+                <p class="title-section">SRAM PUF</p>
+                <p class="info">
+                  is based on the behavior of standard SRAM memory that is
+                  available in any digital chip<br />
+                  Each SRAM cell has its own preferred state each time SRAM is
+                  powered, resulting from random differences in threshold
+                  voltages.
+                </p>
+              </div>
+              <div class="back">
+                <p class="info">
+                  Therefore, an SRAM response produces a unique and random
+                  pattern of 0 and 1. This pattern is like the imprint of a chip
+                  because it is unique to a particular SRAM and therefore to a
+                  specific chip..
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="hex">
+            <div class="flip-card">
+              <div class="front">
+                <p class="title-section">Butterfly PUF</p>
+                <p class="info">
+                  is based on the idea of ​​creating structures within the FPGA
+                  matrix that behave similarly to an SRAM cell during the
+                  start-up phase
+                </p>
+              </div>
+              <div class="back">
+                <p class="info">
+                  A Butterfly PUF cell is a cross-linked flip-flop, which can be
+                  brought into an unstable state before reaching one of two
+                  possible stable states. The structure consists of two latches
+                  whose outlets are cross-coupled.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="hex">
+            <div class="flip-card">
+              <div class="front">
+                <p class="title-section">Arbitral PUF</p>
+                <p class="info">
+                  is a type of silicon PUF based on delay. The idea behind an
+                  arbitrary PUF is to explicitly introduce a race state between
+                  two digital paths in a silicon chip.
+                </p>
+              </div>
+              <div class="back">
+                <p class="info">
+                  Both paths end in an arbitrary circuit that has the ability to
+                  solve the race, determine which of the two was faster and
+                  return the corresponding binary value. Lee proposed
+                  implementing the two paths as chains of switch blocks.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="hex">
+            <div class="flip-card">
+              <div class="front">
+                <p class="title-section">Ring PUF</p>
+                <p class="info">
+                  similar to the Arbitral PUF exploits differences in electronic
+                  circuits caused by variations in the manufacturing process
+                </p>
+              </div>
+              <div class="back">
+                <p class="info">
+                  PUFs are made up of identical oscillating rings, which are
+                  loops of an odd number of inverters, which once stimulated
+                  oscillate at a certain frequency. The oscillation frequency
+                  can be measured using standard digital components.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <ul class="footer">
+        <li class="footer-element">Copyright Paval Malina</li>
+      </ul>
+    </footer>
+  </body>
+</html>

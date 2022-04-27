@@ -1,0 +1,61 @@
+.shape{
+   margin: 1.75%;
+ 
+}
+.hex {
+    height: 200px;
+    width: 200px;
+    align-self: center;
+    background: #ffd100;
+    clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+    transition: background 0.4s;
+    border-color: black;
+    
+    
+  }
+  .hex-layer-1{
+    display: grid;
+    margin: -10px 0px;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(1, 0fr);
+  }
+  .hex-layer-2 {
+    display: grid;
+    margin: -40px 0px;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(2, 0fr);
+  }
+  .hex-layer-3, .honey-comb {
+    display: grid;
+    margin: -40px 0px;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(3, 0fr);
+  }
+  
+.site-name{
+    color:black;
+    margin-top: 40%;
+    margin-left: 18%;
+    font-size:50px;
+}
+.motto{
+    color:black;
+    margin-top: 40%;
+    font-size:45px;
+}
+.five{
+    margin-left: 10%;
+}
+.three{
+    margin-left: 25%;
+}
+.two{
+    margin-left:35%;
+    }
+
+.four{
+    margin-left: 20%;  
+} 

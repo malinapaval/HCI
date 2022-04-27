@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./general_styles.css" />
+
+    <link rel="stylesheet" href="./info_pages_styling.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <title>PUF-basedRFID</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="navbar">
+          <li class="logo navbar-element">
+            <a href="./MainPage.html"> <img src="./logo.png" /></a>
+          </li>
+          <li class="navbar-element">
+            <a href="/PUF.html">P.U.F.</a>
+          </li>
+          <li class="navbar-element">
+            <a href="/RFID.html">R.F.I.D</a>
+          </li>
+
+          <li class="navbar-element">
+            <a href="/PUF_RFID.html">P.U.F. based R.F.I.D.</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="honeycomb">
+        <div class="first-row">
+          <div class="hex">
+            <div class="flip-card">
+              <div class="front">
+                <p class="title-section">Definition</p>
+                <p class="info">
+                  A PUF-based RFID scheme is an RFID scheme that contains PUF
+                  type tags.
+                </p>
+              </div>
+              <div class="back active">
+                <p class="info">
+                  There are two approaches to the authentication protocol for
+                  RFID schemes based on PUFs.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="hex">
+            <div class="flip-card">
+              <div class="front">
+                <p class="title-section">First Case-1</p>
+                <p class="info">
+                  The first approach perceives PUFs as fingerprints, initially
+                  requiring the configuration of a phase in which a PUF model or
+                  a varied set of pairs (challenge-response) are pre-calculated
+                  and stored in the reader's database.
+                </p>
+              </div>
+              <div class="back">
+                <p class="info">
+                  To identify a tag, the reader queries the database by a
+                  challenge, the tag evaluates its function on that challenge
+                  and then compares it with the value already stored in the
+                  database.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="hex">
+            <div class="flip-card">
+              <div class="front">
+                <p class="title-section">First Case-2</p>
+                <p class="info">
+                  This model does not guarantee the type of security we want, as
+                  there is a possibility that an opponent may have enough
+                  challenge-response pairs to be able to simulate the PUF of the
+                  label.
+                </p>
+              </div>
+              <div class="back">
+                <p class="info">
+                  Also, a strong opponent could run the authentication protocol
+                  with a tag until it exhausts all the challenge-response pairs
+                  stored in the database, in which case either a pair will be
+                  reused or a reset mechanism must be introduced.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="hex">
+            <div class="flip-card">
+              <div class="front">
+                <p class="title-section">Second Case</p>
+                <p class="info">
+                  The second approach is based on the idea of ​​using PUFs as
+                  cryptographic key generators or as storage methods.
+                </p>
+              </div>
+              <div class="back">
+                <p class="info">
+                  A tag will evaluate its PUF only to generate or extract a
+                  cryptographic key. Thus, the function is evaluated for a
+                  minimum number of attempts, thus eliminating the possibility
+                  that an opponent may model a PUF.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="second-row">
+          <div class="hex">
+            <div class="flip-card">
+              <div class="front">
+                <p class="title-section"></p>
+                <p class="info"></p>
+              </div>
+              <div class="back">
+                <p class="info"></p>
+              </div>
+            </div>
+          </div>
+          <div class="hex">
+            <div class="flip-card">
+              <div class="front">
+                <p class="title-section">Uses</p>
+                <p class="info">
+                  In order to use a RFID scheme based on a PUF in Vaudney's
+                  model, we need to clarify what corruption means in this case,
+                  in order to be able to make the necessary adaptations.
+                </p>
+              </div>
+              <div class="back">
+                <p class="info">There are two types of scenarios.</p>
+              </div>
+            </div>
+          </div>
+          <div class="hex">
+            <div class="flip-card">
+              <div class="front">
+                <p class="title-section">First Use</p>
+                <p class="info">
+                  By corrupting a PUF tag, the opponent obtains the status of
+                  the tag, in connection with the attack model. In addition, the
+                  tag is destroyed, but its function can still be evaluated.
+                </p>
+              </div>
+              <div class="back">
+                <p class="info">
+                  This variant does not offer major differences compared to the
+                  case of corruption of normal tags (which are not incorporated
+                  in an RFID scheme) because the function of the tag can be seen
+                  as a public function that the opponent can evaluate as he
+                  wishes.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="hex">
+            <div class="flip-card">
+              <div class="front">
+                <p class="title-section">Second Use</p>
+                <p class="info">
+                  By corrupting the tag, the opponent obtains the status of the
+                  tag in relation to the type of attack model.
+                </p>
+              </div>
+              <div class="back">
+                <p class="info">
+                  Both the tag and its PUF are destroyed, in which case the PUF
+                  can no longer be evaluated.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="hex">
+            <div class="flip-card">
+              <div class="front">
+                <p class="title-section"></p>
+                <p class="info"></p>
+              </div>
+              <div class="back">
+                <p class="info"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <ul class="footer">
+        <li class="footer-element">Copyright Paval Malina</li>
+      </ul>
+    </footer>
+  </body>
+</html>

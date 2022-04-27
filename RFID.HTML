@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./general_styles.css" />
+
+    <link rel="stylesheet" href="./info_pages_styling.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <title>RFID</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="navbar">
+          <li class="logo navbar-element">
+            <a href="./MainPage.html"> <img src="./logo.png" /></a>
+          </li>
+          <li class="navbar-element">
+            <a href="/PUF.html">P.U.F.</a>
+          </li>
+          <li class="navbar-element">
+            <a href="/RFID.html">R.F.I.D</a>
+          </li>
+
+          <li class="navbar-element">
+            <a href="/PUF_RFID.html">P.U.F. based R.F.I.D.</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="honeycomb">
+        <div class="first-row">
+          <div class="hex">
+            <div class="flip-card">
+              <div class="front">
+                <p class="title-section">Definition</p>
+                <p class="info">
+                  A radio frequency identification system or RFID uses radio
+                  waves to read and capture various information stored on a tag
+                  attached to an object.
+                </p>
+              </div>
+              <div class="back active">
+                <p class="info">
+                  An RFID is made up of a reader, a set of tags and a
+                  communication protocol between the reader and the tags. A tag
+                  is a transmitter and a responder whose resources are
+                  considered to be limited.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="hex">
+            <div class="flip-card">
+              <div class="front">
+                <p class="title-section">R.F.I.D-1</p>
+                <p class="info">
+                  From a formal point of view, an RFID system can be defined as
+                  the following:<br />
+                  • R an identifier for the reader<br />
+                  • T has a set of labels for the reader, whose size is
+                  polynomial
+                </p>
+              </div>
+              <div class="back">
+                <p class="info">
+                  An RFID system over (R, T) is a triplet S = (SetupR, SetupT,
+                  Ident)<br />
+                  • SetupR (range) - takes a range as a parameter and returns a
+                  triplet (pk, sk, DB) consisting of a key pair (pk, sk) and an
+                  empty D database. It should be noted that pk is a public key
+                  while sk is a key kept secret by the reader
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="hex">
+            <div class="flip-card">
+              <div class="front">
+                <p class="title-section">R.F.I.D-2</p>
+                <p class="info">
+                  SetupT (pk, ID) - initializes the tag identified with ID and
+                  returns an S state of the initial tag and a secret K specific
+                  to the same tags. The pair consisting of ID and secret K is
+                  stored in the DB
+                </p>
+              </div>
+              <div class="back">
+                <p class="info">
+                  Ident (pk; R (sk, DB); ID (s)) - represents the communication
+                  protocol between a reader, R, with its own secret key sk and
+                  the database DB, and a tag identified by an ID, with the
+                  status S. Following this protocol, the reader can receive
+                  either the tag ID or the | symbol.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="hex">
+            <div class="flip-card">
+              <div class="front">
+                <p class="title-section">Security</p>
+                <p class="info">
+                  Black box model - this model allows the opponent to observe
+                  the response returned by the system when he is the one who
+                  gives it inputs, it is even possible that the opponent knows
+                  the algorithms that are used in the cryptographic system.
+                </p>
+              </div>
+              <div class="back">
+                <p class="info">
+                  Gray box model - in addition to the properties offered by the
+                  black box model, the gray box allows the opponent to have
+                  access to some information such as energy consumption or
+                  electromagnetic radiation emitted.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="second-row">
+          <div class="hex">
+            <div class="flip-card">
+              <div class="front">
+                <p class="title-section">Oracles-1</p>
+                <p class="info">
+                  1. CreateTagb (ID) - the SetupT algorithm (pk, ID) is called
+                  to generate a pair (K, S) and to create a T tag with the
+                  specified ID and the initial state S. If the bit is 1 then the
+                  created label is legitimate. The label is considered free
+                </p>
+              </div>
+              <div class="back">
+                <p class="info">
+                  2. DrawTag (si) - through this oracle the opponent is allowed
+                  to interact with free tags according to a certain probability
+                  distribution<br />
+                  It is noted that this oracle provides information on whether
+                  or not the tag is legitimate.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="hex">
+            <div class="flip-card">
+              <div class="front">
+                <p class="title-section">Oracles-2</p>
+                <p class="info">
+                  3. Free (vtag) - using this oracle the opponent can release
+                  the tag tied to the vtag. The vtag identifier will no longer
+                  be usable, as its temporary state is deleted when it is
+                  released.
+                </p>
+              </div>
+              <div class="back">
+                <p class="info">
+                  4. Launch () - calling this oracle means that the opponent
+                  wants to launch a new protocol, in other words this oracle
+                  returns a unique identifier that will be used with the
+                  protocol.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="hex">
+            <div class="flip-card">
+              <div class="front">
+                <p class="title-section">Oracles-3</p>
+                <p class="info">
+                  5. SendReader (m, pi) - through this oracle, the opponent
+                  receives the reader's response when a message m is part of a
+                  pi protocol. When the message m is empty, the oracle returns
+                  the first message from the pi protocol.
+                </p>
+              </div>
+              <div class="back">
+                <p class="info">
+                  6. SendTag (m, vtag) - this oracle returns the tag response
+                  when the m message is sent to the tag represented by the vtag.
+                  When the m message is blank this oracle returns the first
+                  message from the pi protocol
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="hex">
+            <div class="flip-card">
+              <div class="front">
+                <p class="title-section">Oracles-4</p>
+                <p class="info">
+                  7. Result (pi) - this oracle allows the opponent to know the
+                  reader's decision regarding the authentication of the tag in
+                  the pi session. The oracle will return 1 if during the session
+                  the reader authenticated the tag and 0 in the opposite case.
+                </p>
+              </div>
+              <div class="back">
+                <p class="info">
+                  8. Corrupt (vtag) - this oracle returns the permanent state of
+                  the label represented by the vtag, when the label is not part
+                  of any calculation of any step
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="hex">
+            <div class="flip-card">
+              <div class="front">
+                <p class="title-section">Adversaries</p>
+                <p class="info">
+                  Weak opponents - no access to Corrupt Oracle ()<br />
+                  Direct opponents - if they have access to the Corrupt Oracle
+                  then that is the only one they can access
+                </p>
+              </div>
+              <div class="back">
+                <p class="info">
+                  Destructive opponents - after obtaining information from the
+                  Corrupt Oracle (vtag), the opponent destroys the tag
+                  identified by the vtag and it will no longer be available, the
+                  database will still maintain the existence of that tag<br />
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <ul class="footer">
+        <li class="footer-element">Copyright Paval Malina</li>
+      </ul>
+    </footer>
+  </body>
+</html>
