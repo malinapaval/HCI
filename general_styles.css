@@ -30,11 +30,15 @@ nav {
 .navbar-element {
   margin-top: 1%;
 }
+.navbar-element:hover{
+  background-color: #4a3263;
+}
 
 img {
   width: 55px;
   height: 55px;
 }
+
 footer {
   background-color: var(--footer-nav-color);
   position: fixed;
@@ -53,4 +57,19 @@ footer {
 }
 .info {
   color: white;
+}
+@media (max-width:600px){
+  body{
+    overflow:visible;
+  }
+  nav{
+    font-size:8px;
+  }
+  img {
+    width: 25px;
+    height: 25px;
+  }
+ footer{
+   font-size:6px;
+ }
 }

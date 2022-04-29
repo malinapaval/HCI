@@ -64,14 +64,36 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari */
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 .info {
   text-align: center;
 }
-/* Style the back side */
+
 .back {
   text-align: center;
   transform: rotateY(180deg);
+}
+
+@media(max-width:600px){
+.hex{
+  width: 150px;
+  height: 150px;
+}
+.first-row, .second-row{
+  display:block;
+ margin-left: 30%;
+ margin-top: 1%;
+
+}
+.second-row{
+  margin-bottom: 3%;
+}
+.title-section{
+  font-size: 15px;
+}
+.info{
+  font-size:8px;
+}
 }
